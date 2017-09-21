@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calcucator</title>
+</head>
+<body>
+
+
+<div style="border: solid; border-color: black; width: 330px; height: 250px;">
+    <form>
+    <div style="position: absolute; left: 50px">
+        <input type="text" id="number" style="height: 35px; width: 245px"  oninput="func(this.value)">
+    </div>
+<div >
+    <div style="display: inline-block; position: absolute; left: 50px; top: 10%">
+        <button name="sqrt" style="background-color: grey; border: 1px solid; width: 50px; height: 50px;" onclick="sqrtNumber()"><p style="font-size:140%">&#8730</p></button></div>
+
+    <div style="display: inline-block;position: absolute; left: 100px; top: 10%">
+        <button name="pow" style="background-color: grey; border: 1px solid; width: 50px; height: 50px;" onclick="powNumber()"><p style="font-size:140%">^2</p></button></div>
+    <div style="display: inline-block;position: absolute; left: 150px; top: 10%">
+        <button name="fact" style="background-color: grey; border: 1px solid; width: 50px; height: 50px;" onclick="factNumber()"><p style="font-size:140%">x!</p></button></div>
+    <div style="display: inline-block;position: absolute; left: 200px; top: 10%">
+        <button name="fract" style="background-color: grey; border: 1px solid; width: 50px; height: 50px;" onclick="fractNumber()"><p style="font-size:140%">1/x</p></button></div>
+    <div style="display: inline-block;position: absolute; left: 250px; top: 10%">
+        <button name="lg" style="background-color: grey; border: 1px solid; width: 50px; height: 50px;" onclick="lgNumber()"><p style="font-size:140%">lg</p></button></div>
+</div>
+    <div >
+        <div style="display: inline-block; position: absolute; left: 50px; top: 20%">
+            <button name="6" style="background-color: grey; border: 1px solid; width: 50px; height: 50px; "onclick="equal(6)"><p style="font-size:140%">6</p></button></div>
+
+        <div style="display: inline-block;position: absolute; left: 100px; top: 20%">
+            <button name="7" style="background-color: grey; border: 1px solid; width: 50px; height: 50px;"onclick="equal(7)"><p style="font-size:140%">7</p></button></div>
+        <div style="display: inline-block;position: absolute; left: 150px; top: 20%">
+            <button name="8" style="background-color: grey; border: 1px solid; width: 50px; height: 50px;"onclick="equal(8)"><p style="font-size:140%">8</p></button></div>
+        <div style="display: inline-block;position: absolute; left: 200px; top: 20%">
+            <button name="9" style="background-color: grey; border: 1px solid; width: 50px; height: 50px;"onclick="equal(9)"><p style="font-size:140%">9</p></button></div>
+        <div style="display: inline-block;position: absolute; left: 250px; top: 20%">
+            <button name="0" style="background-color: grey; border: 1px solid; width: 50px; height: 50px;" onclick="equal(0)"><p style="font-size:140%">0</p></button></div>
+    </div>
+
+    <div >
+        <div style="display: inline-block; position: absolute; left: 50px; top: 30%">
+            <button name="1" style="background-color: grey; border: 1px solid; width: 50px; height: 50px;"onclick="equal(1)"><p style="font-size:140%">1</p></button></div>
+
+        <div style="display: inline-block;position: absolute; left: 100px; top: 30%">
+            <button name="2" style="background-color: grey; border: 1px solid; width: 50px; height: 50px;"onclick="equal(2)"><p style="font-size:140%">2</p></button></div>
+        <div style="display: inline-block;position: absolute; left: 150px; top: 30%">
+            <button name="3" style="background-color: grey; border: 1px solid; width: 50px; height: 50px;"onclick="equal(3)"><p style="font-size:140%">3</p></button></div>
+        <div style="display: inline-block;position: absolute; left: 200px; top: 30%">
+            <button name="4" style="background-color: grey; border: 1px solid; width: 50px; height: 50px;"onclick="equal(4)"><p style="font-size:140%">4</p></button></div>
+        <div style="display: inline-block;position: absolute; left: 250px; top: 30%">
+            <button name="5" style="background-color: grey; border: 1px solid; width: 50px; height: 50px;"onclick="equal(5)"><p style="font-size:140%">5</p></button></div>
+    </div>
+    <div>
+
+        <div style="display: inline-block;position: absolute; left: 50px; top: 40%">
+            <button name="c" style="background-color: grey; border: 1px solid; width: 250px; height: 50px;">C</button></div>
+    </div>
+    </form>
+</div>
+
+<script>
+    function func(v){
+        document.getElementById('number').value=v;
+
+    }
+    function equal(nom){
+
+        document.getElementById('number').value = nom;
+
+    }
+    function sqrtNumber(){
+
+        var a=document.getElementById('number').value;
+        //  document.getElementById('number').value=Math.sqrt(parseInt(a));
+        var c=Math.sqrt(a);
+        document.getElementById('number').value=c;
+
+
+    }
+    function powNumber(){
+        var b=document.getElementById('number').value;
+        var bb= Math.pow(b,2);
+        document.getElementById('number').value=bb;
+    }
+    function factNumber(){
+        var d=document.getElementById('number').value;
+        function fact(d){
+            return (d!=1)?d*fact(d-1):1;
+        }
+        var dd=fact(d);
+        document.getElementById('number').value=dd;
+    }
+    function fractNumber() {
+        var e=document.getElementById('number').value;
+        var ee=1/e;
+        document.getElementById('number').value=ee;
+    }
+    function lgNumber(){
+        var f=document.getElementById('number').value;
+        var ff=Math.log10(f);
+        document.getElementById('number').value=ff;
+    }
+</script>
+
+</body>
+</html>
