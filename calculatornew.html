@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Calcucator</title>
+        <link rel="stylesheet" href = "https://code.jquery.com/qunit/qunit-1.22.0.css">
+        <script src = "http://code.jquery.com/qunit/qunit-1.22.0.js"></script>
+    </head>
+
+<body>
+<div id="qunit"></div>
+<div id="qunit-fixture"></div>
+<script>
+    function add(a,b){
+        return parseInt(a)+parseInt(b);
+    }
+    function degor(c,d){
+        return c-d;
+    }
+    function multiply(e,f){
+        return e*f;
+    }
+    function devide(k,m){
+        return k/m;
+    }
+
+    function fu(funk, a){ //funkcuya podstanovki znacheniya v fynkcuuy
+        var str=funk;
+        var fn=eval(str.replace(/x/gi, +a));
+        return parseInt(fn);
+
+
+
+    }
+
+    function integralX(f,min,max){  // fynkcuya podschituvaniya integrala
+
+        var d=(max-min)/10;
+        var s=0;
+
+        for(var i=min; i<=max; i=i+d){
+            var s1=(fu(f, i)+fu(f, i+d))*d/2;
+            s=s+s1;
+           // document.write(s+"<br>");
+        }
+       // document.write(s+"<br>");
+        return s;
+    }
+   //   integralX("x", 1, 2);
+
+    QUnit.test("First Test", function(assert){
+var res=add(2,3);
+assert.equal(res, "5");
+res=degor(4,3);
+assert.equal(res, "1");
+        res=multiply(4,3);
+        assert.equal(res, "12");
+        res=devide(4,2);
+        assert.equal(res, "2");
+        res=integralX("x", 3, 1);
+        assert.equal(res, "2");
+    });
+    </script>
+</body>
+</html>
